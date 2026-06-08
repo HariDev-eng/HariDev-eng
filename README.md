@@ -63,10 +63,8 @@ A Spring Boot blog backend with JWT authentication, role-based access control vi
 
 ## 📊 GitHub Stats
 
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=HariDev-eng&show_icons=true&theme=default&hide_border=true&count_private=true&cache_seconds=1800" height="160"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HariDev-eng&layout=compact&theme=default&hide_border=true&cache_seconds=1800" height="160"/>
-</p>
+![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=HariDev-eng&theme=default)
+![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=HariDev-eng&theme=default)
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=HariDev-eng&theme=default&hide_border=true)
 
