@@ -1,224 +1,755 @@
-# Hi, I'm Hari Pradap 👋
+<div align="center">
 
-Backend developer passionate about distributed systems, microservices, and event-driven architectures.
+# Hi 👋 I'm Hari Pradap
 
-I recently graduated with a **B.Tech in Information Technology** and completed a **10-month internship at Marmin Technologies**, where I worked on SaaS-based compliance software building REST APIs, financial document workflows, webhook delivery systems, and asynchronous event processing using RabbitMQ.
+### Backend Engineer • Distributed Systems Enthusiast • Microservices Builder
 
-I learn by building real systems from scratch—not by following tutorials. My goal is to understand not only **how** software works but also **why** it's designed that way, from architectural decisions to scalability trade-offs.
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=3500&pause=1000&center=true&vCenter=true&width=650&lines=Backend+Developer;Building+Distributed+Systems;Learning+Software+Architecture;Go+%7C+Spring+Boot+%7C+Kafka+%7C+RabbitMQ;Always+Building.+Always+Learning." />
+
+</div>
 
 ---
 
-# 🚀 What I'm currently building
+## 🚀 About Me
 
-### 🏥 Distributed Patient Management System
+I'm a backend developer passionate about building scalable systems and understanding **why** software is designed the way it is.
 
-A healthcare platform built using **microservices**, **event-driven communication**, and **distributed system principles**.
+I recently graduated with a **B.Tech in Information Technology** and completed a **10-month internship at Marmin Technologies**, where I worked on:
 
-Current architecture includes:
-
-- Microservices
-- API Gateway
-- JWT Authentication
-- gRPC
-- Apache Kafka
+- REST APIs
+- Financial document workflows
+- Webhook delivery systems
 - RabbitMQ
-- CQRS
-- Event-Carried State Transfer
+- SaaS compliance platform
 - PostgreSQL
-- Docker
-- React Frontend
+- Go backend services
 
-Current services:
+Today I'm focused on learning backend engineering by building **real distributed systems** instead of isolated tutorials.
 
-- Patient Service
-- Doctor Service
-- Nurse Service
-- Appointment Service
-- Diagnosis Service
-- Inventory Service
-- Notification Service (Go)
-- Auth Service
-- API Gateway
+My goal isn't just to write code.
 
-The project is focused on learning software architecture through real implementation rather than simplified examples.
+It's to understand architecture, scalability, distributed systems, and the engineering trade-offs behind production software.
 
 ---
 
-# 🛠 Tech Stack
+# 🚧 Currently Building
 
-## Languages
+## 🏥 Distributed Patient Management Platform
 
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+A healthcare platform built from scratch using **microservices** and **event-driven architecture**.
 
----
+### Current Progress
 
-## Backend
-
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=spring-boot&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
-![Apache Kafka](https://img.shields.io/badge/Kafka-231F20?style=flat&logo=apache-kafka&logoColor=white)
-![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat&logo=rabbitmq&logoColor=white)
-![gRPC](https://img.shields.io/badge/gRPC-4285F4?style=flat&logo=google&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
-
----
-
-## Databases
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat&logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=flat&logo=mysql&logoColor=white)
+| Component | Status |
+|-----------|---------|
+| 🌐 React Frontend | 🚧 |
+| 🚪 API Gateway | ✅ |
+| 👤 Patient Service | ✅ |
+| 👨‍⚕️ Doctor Service | ✅ |
+| 🩺 Nurse Service | ✅ |
+| 📅 Appointment Service | ✅ |
+| 🧾 Diagnosis Service | ✅ |
+| 📦 Inventory Service | ✅ |
+| 🔔 Notification Service (Go) | 🚧 |
+| 🔐 Authentication Service | 🚧 |
+| 📨 Kafka Event Streaming | ✅ |
+| 🐇 RabbitMQ Workers | 🚧 |
+| 🔗 gRPC Communication | ✅ |
+| 🐳 Docker | 🚧 |
+| ☁ Kubernetes | 📅 Planned |
 
 ---
 
-## Frontend
+# 🏗 Architecture Snapshot
 
-![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+```text
+                        React UI
+
+                            │
+
+                     API Gateway
+
+                            │
+
+────────────────────────────────────────────────────────
+
+ Patient Service
+
+ Doctor Service
+
+ Nurse Service
+
+ Appointment Service
+
+ Diagnosis Service
+
+ Inventory Service
+
+ Notification Service (Go)
+
+ Authentication Service
+
+────────────────────────────────────────────────────────
+
+ REST APIs
+
+ gRPC
+
+ Kafka
+
+ RabbitMQ
+
+────────────────────────────────────────────────────────
+
+ PostgreSQL
+
+ Redis
+
+ Docker
+```
 
 ---
 
-## DevOps & Tools
+## 🧠 What I'm Learning
 
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
-![Cypress](https://img.shields.io/badge/Cypress-17202C?style=flat&logo=cypress&logoColor=white)
+Instead of building isolated CRUD applications, I'm currently exploring backend engineering through real projects.
 
----
-
-# 🏗 What I'm Learning
-
-I'm currently exploring backend engineering beyond CRUD applications by implementing concepts used in production systems.
-
-Topics I'm actively learning include:
+Current focus:
 
 - Distributed Systems
-- Software Architecture
-- Domain-Driven Design (DDD)
+- Microservices
 - Event-Driven Architecture
 - CQRS
-- Microservices
 - Kafka
 - RabbitMQ
 - gRPC
-- Design Patterns
+- Software Architecture
+- Domain-Driven Design
 - SOLID Principles
 - Clean Architecture
+- Scalability
+- System Design
+- Cloud Native Development
+
+---
+
+## 🎯 Current Goal
+
+Build a production-style healthcare platform that helps me understand:
+
+- Designing scalable backend systems
+- Service-to-service communication
+- Distributed messaging
+- Event-driven workflows
+- Production architecture
+- Cloud-native applications
+
+Alongside the project, I'm documenting every major architectural decision to build my own **Backend Architecture Handbook**.
+
+> *Learn by Building • Improve by Refactoring • Understand by Documenting*
+
+
+# 🚀 Featured Projects
+
+These are projects I've built to understand backend engineering, distributed systems, concurrency, and software architecture through real implementation.
+
+---
+
+# 🏥 Distributed Patient Management Platform
+
+> **A production-style healthcare platform built with microservices, event-driven architecture, and distributed communication.**
+
+This project is my primary learning platform for backend engineering. Rather than building isolated CRUD services, I'm designing a complete distributed system where each service owns its own responsibility, database, and communication patterns.
+
+## 🏗 Architecture
+
+```text
+                    React Frontend
+                          │
+                          ▼
+                    API Gateway
+                          │
+        ┌─────────────────┼──────────────────┐
+        │                 │                  │
+        ▼                 ▼                  ▼
+ Patient Service     Doctor Service     Auth Service
+        │                 │
+        │                 ▼
+        │         Appointment Service
+        │                 │
+        │                 ▼
+        │         Diagnosis Service
+        │
+        ▼
+ Notification Service (Go)
+
+──────────────────────────────────────────────
+
+REST APIs
+
+gRPC
+
+Apache Kafka
+
+RabbitMQ
+
+──────────────────────────────────────────────
+
+PostgreSQL
+
+Docker
+```
+
+---
+
+## 📦 Microservices
+
+| Service | Responsibility |
+|----------|----------------|
+| 🌐 API Gateway | Centralized routing and request forwarding |
+| 👤 Patient Service | Patient registration and profile management |
+| 👨‍⚕️ Doctor Service | Doctor profiles, availability and specialization |
+| 🩺 Nurse Service | Nurse assignment and ward management |
+| 📅 Appointment Service | Appointment scheduling and lifecycle |
+| 🧾 Diagnosis Service | Medical diagnosis and patient history |
+| 📦 Inventory Service | Medical inventory management |
+| 🔔 Notification Service (Go) | Email, SMS and In-App notification processing |
+| 🔐 Authentication Service | JWT authentication and authorization |
+
+---
+
+## ⚡ Communication Patterns
+
+### REST APIs
+
+Client communication and external service access.
+
+### gRPC
+
+High-performance synchronous communication between services.
+
+Examples:
+
+- Appointment → Patient Verification
+- Appointment → Doctor Availability
+
+---
+
+### Apache Kafka
+
+Used for asynchronous business events.
+
+Current event flow:
+
+```text
+Appointment Created
+
+        │
+
+        ▼
+
+Kafka
+
+        │
+
+        ▼
+
+Notification Service
+
+        │
+
+        ▼
+
+Notification Processing
+```
+
+---
+
+### RabbitMQ
+
+Used for asynchronous background workers.
+
+```text
+Notification
+
+        │
+
+        ▼
+
+RabbitMQ
+
+        │
+
+        ▼
+
+Email Worker
+
+SMS Worker
+
+In-App Worker
+```
+
+---
+
+## 🧠 Concepts Implemented
+
+- Microservices
+- Event-Driven Architecture
+- CQRS
+- Event-Carried State Transfer
+- RabbitMQ Workers
+- Apache Kafka
+- gRPC
+- API Gateway
+- JWT Authentication
+- Protocol Buffers
+- Repository Pattern
+- Builder Pattern
+- Factory Pattern
+- Clean Architecture
+
+---
+
+## 🛠 Tech Stack
+
+`Spring Boot`
+`Go`
+`React`
+`PostgreSQL`
+`Kafka`
+`RabbitMQ`
+`gRPC`
+`Protocol Buffers`
+`Docker`
+`JWT`
+
+---
+
+### 🔗 Repositories
+
+**Backend**
+
+https://github.com/HariDev-eng/Patient-Management-System
+
+**Frontend**
+
+https://github.com/HariDev-eng/patient-management-ui
+
+---
+
+# 🎬 Concurrent Movie Seat Booking System
+
+> Preventing double booking under heavy concurrency using multiple synchronization strategies.
+
+A Go backend built to understand concurrency, synchronization, race conditions and distributed locking.
+
+---
+
+## Features
+
+- Goroutines
+- Mutex (sync.RWMutex)
+- Redis Atomic SET NX
+- Interface-driven storage implementations
+- Concurrent load testing
+- Benchmark comparison
+
+---
+
+## Implemented Strategies
+
+✅ In-Memory
+
+✅ Mutex Protected
+
+✅ Redis Atomic Operations
+
+---
+
+## Tech Stack
+
+`Go`
+`Redis`
+`Goroutines`
+`REST APIs`
+`Clean Architecture`
+
+---
+
+🔗 Repository
+
+https://github.com/HariDev-eng/concurrent-movie-booking
+
+---
+
+# 🔗 Event-Driven Webhook Processing System
+
+> A webhook platform inspired by Stripe, GitHub and modern SaaS products.
+
+Built to understand asynchronous event delivery and reliable webhook processing.
+
+---
+
+## Features
+
+- Event-driven processing
+- RabbitMQ
+- Retry mechanism
+- Asynchronous workers
+- Reliable webhook delivery
+- Producer / Consumer architecture
+
+---
+
+## Tech Stack
+
+`Go`
+`RabbitMQ`
+`REST APIs`
+`Webhooks`
+
+---
+
+🔗 Repository
+
+https://github.com/HariDev-eng/Event-Driven-Webhook-Processing-System
+
+---
+
+# 📝 Blog Platform
+
+> A secure REST backend built with Spring Boot and Spring Security.
+
+---
+
+## Features
+
+- JWT Authentication
+- Spring Security
+- Role-Based Access Control
+- CRUD APIs
+- Categories
+- Tags
+- PostgreSQL
+
+---
+
+## Tech Stack
+
+`Spring Boot`
+`Spring Security`
+`JWT`
+`PostgreSQL`
+
+---
+
+🔗 Repository
+
+https://github.com/HariDev-eng/Blog-App
+
+---
+
+# 🚀 What's Next?
+
+I'm currently expanding the Patient Management Platform with:
+
+- ✅ Authentication Service
+- ✅ Notification Service
+- 🔄 Docker Deployment
+- 🔄 Kubernetes
+- 🔄 AWS
+- 🔄 CI/CD
+- 🔄 Observability
+- 🔄 Distributed Tracing
+
+The goal isn't simply to add technologies—it's to understand the engineering trade-offs involved in designing and evolving distributed backend systems.
+
+
+
+# 🛠 Tech Stack
+
+## 💻 Languages
+
+<p>
+  <img src="https://skillicons.dev/icons?i=go,java,javascript,python" />
+</p>
+
+---
+
+## ⚙️ Backend
+
+<p>
+  <img src="https://skillicons.dev/icons?i=spring,nodejs" />
+</p>
+
+**Technologies**
+
+- REST APIs
+- gRPC
+- Apache Kafka
+- RabbitMQ
+- Protocol Buffers
+- JWT Authentication
+- Spring Security
+- Webhooks
+
+---
+
+## 🗄 Databases
+
+<p>
+  <img src="https://skillicons.dev/icons?i=postgres,mongodb,redis,mysql" />
+</p>
+
+---
+
+## 🎨 Frontend
+
+<p>
+  <img src="https://skillicons.dev/icons?i=react,tailwind" />
+</p>
+
+---
+
+## ☁ DevOps & Tools
+
+<p>
+  <img src="https://skillicons.dev/icons?i=docker,git,linux" />
+</p>
+
+Currently Learning:
+
+- Kubernetes
+- AWS
+- CI/CD
+- GitHub Actions
+- Terraform
+
+---
+
+# 🧠 Engineering Journey
+
+I believe the best way to learn software engineering is to build increasingly complex systems and continuously improve them.
+
+Instead of collecting tutorials, I focus on building projects that force me to solve real engineering problems.
+
+Over the past year I've gradually moved from building CRUD applications to designing distributed systems.
+
+Current areas of focus:
+
+- Backend Engineering
+- Distributed Systems
+- Event-Driven Architecture
+- Software Architecture
+- Cloud-Native Applications
+- Microservices
 - Scalability
 - System Design
 
 ---
 
-# 🚀 Featured Projects
+# 📚 Currently Learning
 
-## 🏥 Distributed Patient Management System
+Rather than trying to learn everything at once, I'm progressing one topic at a time.
 
-A production-scale healthcare platform built using microservices and asynchronous messaging.
+## Backend
 
-### Highlights
-
-- Spring Boot Microservices
-- Go Notification Service
-- Kafka Event Streaming
-- RabbitMQ Workers
-- gRPC Service Communication
-- JWT Authentication
-- API Gateway
-- React Frontend
-- Dockerized Architecture
-- PostgreSQL
-
-**Repository**
-
-🔗 https://github.com/HariDev-eng/Patient-Management-System
-
-Frontend
-
-🔗 https://github.com/HariDev-eng/patient-management-ui
+- ✅ REST APIs
+- ✅ Spring Boot
+- ✅ Go
+- ✅ gRPC
+- ✅ Kafka
+- ✅ RabbitMQ
+- 🔄 Authentication & Authorization
+- 🔄 Docker
+- 🔄 Kubernetes
+- 🔄 AWS
 
 ---
 
-## 🎬 Concurrent Movie Seat Booking System
+## Software Architecture
 
-A concurrency-focused Go backend demonstrating multiple approaches to preventing double booking under high load.
-
-Highlights:
-
-- Goroutines
-- Mutex
-- Redis Atomic Operations
-- Interface-driven architecture
-- Concurrency Benchmarks
-
-🔗 https://github.com/HariDev-eng/concurrent-movie-booking
+- ✅ SOLID Principles
+- ✅ Clean Architecture
+- 🔄 Domain-Driven Design
+- 🔄 CQRS
+- 🔄 Event-Driven Architecture
+- 🔄 Event-Carried State Transfer
+- 🔄 Distributed Messaging
+- 🔄 Architectural Decision Records (ADRs)
 
 ---
 
-## 🔗 Event-Driven Webhook Processing System
+## Distributed Systems
 
-A webhook delivery platform inspired by production systems.
-
-Highlights:
-
-- Event-driven processing
+- Kafka
 - RabbitMQ
-- Retry Mechanism
-- Asynchronous Workers
-
-🔗 https://github.com/HariDev-eng/Event-Driven-Webhook-Processing-System
-
----
-
-## 📝 Blog Platform
-
-Backend blog application built with Spring Boot.
-
-Features:
-
-- Spring Security
-- JWT
-- RBAC
-- PostgreSQL
-- REST APIs
-
-🔗 https://github.com/HariDev-eng/Blog-App
+- Retry Strategies
+- Dead Letter Queues
+- Transactional Outbox
+- Idempotency
+- Eventual Consistency
+- Distributed Transactions
 
 ---
 
-# 📚 Current Goal
+# 🎯 2026 Goals
 
-I'm currently building a complete distributed healthcare platform to deepen my understanding of:
+- ✅ Build a distributed healthcare platform
+- 🔄 Deploy every service with Docker
+- 🔄 Learn Kubernetes
+- 🔄 Learn AWS
+- 🔄 Build CI/CD pipelines
+- 🔄 Build a Backend Architecture Handbook
+- 🔄 Contribute to Open Source
+- 🔄 Land a Backend Engineer role
 
+---
+
+# 💡 Engineering Philosophy
+
+> "Learn by building.
+>
+> Improve by refactoring.
+>
+> Understand by documenting."
+
+Every project I build starts simple.
+
+As I encounter new problems, I study the trade-offs, redesign the architecture, document the decision, and continue improving.
+
+That process has taught me far more than simply following tutorials.
+
+---
+
+# 📈 Current Learning Roadmap
+
+```text
+Backend Development
+        │
+        ▼
+Microservices
+        │
+        ▼
+Event-Driven Systems
+        │
+        ▼
+Distributed Systems
+        │
+        ▼
+Software Architecture
+        │
+        ▼
+Cloud Native Engineering
+        │
+        ▼
+Platform Engineering
+```
+
+---
+
+# 🌱 Beyond Code
+
+When I'm not coding, you'll usually find me:
+
+🏋️ Working out
+
+📚 Reading about distributed systems and software architecture
+
+📝 Documenting what I learn
+
+🧩 Solving algorithmic problems
+
+🚀 Building side projects to experiment with new ideas
+
+---
+
+# 📖 What You'll Find on My GitHub
+
+✔ Production-style backend projects
+
+✔ Microservices
+
+✔ Event-driven architectures
+
+✔ Distributed systems experiments
+
+✔ Concurrency projects
+
+✔ Backend learning notes
+
+✔ Architecture Decision Records (ADRs)
+
+✔ Real-world engineering experiments
+
+Instead of uploading dozens of unfinished repositories, I prefer building a few projects deeply and continuously improving them.
+
+
+---
+
+# 📊 GitHub Analytics
+
+<div align="center">
+
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=HariDev-eng&show_icons=true&theme=transparent&hide_border=true&rank_icon=github"/>
+
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HariDev-eng&layout=compact&theme=transparent&hide_border=true"/>
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com?user=HariDev-eng&theme=transparent&hide_border=true"/>
+
+</div>
+
+---
+
+# 🏆 GitHub Activity
+
+<div align="center">
+
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=HariDev-eng&theme=github"/>
+
+</div>
+
+---
+
+# 📈 Contributions
+
+<div align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=HariDev-eng&theme=github-compact&hide_border=true"/>
+
+</div>
+
+---
+
+# 🎯 Current Focus
+
+Currently working on building a distributed healthcare platform while learning:
+
+- Backend Engineering
 - Distributed Systems
+- Event-Driven Architecture
+- Cloud Native Applications
 - Software Architecture
-- Event-Driven Systems
-- Cloud-Native Applications
-- Scalable Backend Design
+- System Design
 
-Alongside the project, I'm documenting every architectural decision and the trade-offs behind it to build a practical backend architecture handbook.
+Current priorities:
 
----
+```
 
-# 📈 GitHub Stats
+🏥 Patient Management Platform
 
-![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=HariDev-eng&theme=default)
+🔔 Notification Service
 
-![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=HariDev-eng&theme=default)
+🔐 Authentication Service
 
-![GitHub Streak](https://streak-stats.demolab.com?user=HariDev-eng&theme=default&hide_border=true)
+🐳 Docker Deployment
 
----
+☸ Kubernetes
 
-# 🤝 Let's Connect
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/hari-pradap-490663260)
-
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:haripradap09@gmail.com)
-
----
-
-> *"Build systems. Break them. Understand why they broke. Build them better."*
+☁ AWS
