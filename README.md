@@ -26,28 +26,9 @@ Today I'm focused on learning backend engineering by building **real distributed
 
 A healthcare platform built from scratch using **microservices** and **event-driven architecture** — my primary vehicle for learning backend engineering properly.
 
-```
-                              React Frontend
-                                    │
-                                    ▼
-                              API Gateway
-                                    │
-        ┌───────────┬──────────────┼──────────────┬────────────┐
-        ▼            ▼              ▼              ▼            ▼
-   Patient Svc   Doctor Svc     Nurse Svc    Appointment Svc  Auth Svc
-        │                                          │
-        │                                          ▼
-        │                                   Diagnosis Svc
-        ▼
-   Inventory Svc                          Notification Svc (Go)
-        │                                          │
-        └──────────────┬───────────────────────────┘
-                        ▼
-              REST · gRPC · Kafka · RabbitMQ
-                        │
-                        ▼
-                 PostgreSQL · Redis
-```
+<div align="center">
+<img src="docs/architecture.png" width="900" alt="Architecture diagram — layered view of API Gateway, core services, Kafka/RabbitMQ messaging, and data persistence" />
+</div>
 
 ### Services & Status
 
