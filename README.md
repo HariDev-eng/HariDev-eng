@@ -231,33 +231,25 @@ Backend Development → Microservices → Event-Driven Systems
 
 <div align="center">
 
-<table>
-<tr>
-<td><img src="https://github-readme-stats.vercel.app/api?username=HariDev-eng&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&count_private=true&card_width=420&cache_seconds=86400" /></td>
-<td><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HariDev-eng&layout=compact&theme=tokyonight&hide_border=true&card_width=320&cache_seconds=86400" /></td>
-</tr>
-</table>
+![Followers](https://img.shields.io/github/followers/HariDev-eng?label=Followers&style=for-the-badge&color=2E9EF7&logo=github&logoColor=white)
+![Patient Management Stars](https://img.shields.io/github/stars/HariDev-eng/Patient-Management-System?label=Patient%20Platform%20Stars&style=for-the-badge&color=F7DF1E&logo=github&logoColor=black)
+![Last Commit](https://img.shields.io/github/last-commit/HariDev-eng/Patient-Management-System?label=Last%20Commit&style=for-the-badge&color=47A248&logo=github&logoColor=white)
 
 <img src="https://github-readme-streak-stats.herokuapp.com?user=HariDev-eng&theme=tokyonight&hide_border=true" width="600"/>
-
-<img src="https://github-profile-trophy.vercel.app/?username=HariDev-eng&theme=tokyonight&no-frame=true&row=1&column=6&margin-w=8" />
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=HariDev-eng&theme=tokyo-night&hide_border=true" width="600"/>
 
 </div>
 
 <details>
-<summary><b>Cards showing broken?</b> — click for the fix</summary>
+<summary><b>Why the stats/top-langs/trophy cards are gone</b></summary>
 <br>
 
-The shared `github-readme-stats.vercel.app` instance is community-run and shares its GitHub API quota with every profile using it — so it fails often, and that's expected to keep happening rather than resolve itself. In fact the original project has stopped active development and now points users to its actively maintained successor, **GitHub Stats Extended**. `cache_seconds=86400` (added above) tells it to serve a cached image for 24 hours once it does succeed once, which cuts down on repeat failures — but it's a mitigation, not a fix.
+Those three specifically (the main stats card, top-langs card, and trophy) all came from the `vercel.app` family of community-hosted widgets, which share a single GitHub API quota across every profile using them — so they fail constantly and independently of anything you did. The streak stats and activity graph above use different backends and have been rendering fine, so they're kept as-is.
 
-The durable fix is to stop calling a live API on every page view entirely:
+The badges replacing them now pull from **shields.io**, which proxies and caches the GitHub API itself rather than routing through that shared instance, so they render reliably.
 
-1. **GitHub Actions workflow (recommended)** — Use a workflow that runs on a schedule, generates the stats card as a static SVG, and commits it straight into your profile repo. Since the image is then just a file in your repo (not a live API call), it can't be rate-limited by traffic to your README. Search "github readme stats action" for ready-made workflows that do this.
-2. **Self-host on Vercel** — Fork [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats), deploy to your own free Vercel project, generate a GitHub PAT (classic, no expiry, `repo` + `read:user` scopes), set it as `PAT_1` in your Vercel env vars, then swap the domain in every URL above for your own deployment. You get your own quota, separate from everyone else's.
-
-Option 1 is the more permanent fix since it removes the live-call dependency altogether; option 2 still depends on live calls, just with your own rate limit instead of the shared one.
+If you want the original card *look* (rounded stat cards, top-languages breakdown, trophy icons) back instead of badges, the durable way to get it is a **GitHub Actions workflow** that runs on a schedule, renders the cards as static SVGs, and commits them into your profile repo — since the image becomes a file in your repo rather than a live API call, it can't be rate-limited by README traffic. Search "github readme stats action" for ready-made workflows that do this.
 
 </details>
 
