@@ -184,21 +184,44 @@ Backend Development → Microservices → Event-Driven Systems
 <div align="center">
 
 **Languages**
-<img src="https://skillicons.dev/icons?i=go,java,javascript,python" />
+
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 **Backend**
-<img src="https://skillicons.dev/icons?i=spring,nodejs" />
-`REST APIs` `gRPC` `Kafka` `RabbitMQ` `Protocol Buffers` `Spring Security` `Webhooks`
+
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![Kafka](https://img.shields.io/badge/Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white)
+![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=for-the-badge&logo=rabbitmq&logoColor=white)
+![gRPC](https://img.shields.io/badge/gRPC-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
+`REST APIs` `Protocol Buffers` `Spring Security` `Webhooks`
 
 **Databases**
-<img src="https://skillicons.dev/icons?i=postgres,mongodb,redis,mysql" />
+
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
 **Frontend**
-<img src="https://skillicons.dev/icons?i=react,tailwind" />
+
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
 **DevOps & Tools**
-<img src="https://skillicons.dev/icons?i=docker,git,linux" />
-*Currently learning:* `Kubernetes` `AWS` `CI/CD` `GitHub Actions` `Terraform`
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
+*Currently learning:*
+
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
 
 </div>
 
@@ -210,8 +233,8 @@ Backend Development → Microservices → Event-Driven Systems
 
 <table>
 <tr>
-<td><img src="https://github-readme-stats.vercel.app/api?username=HariDev-eng&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&count_private=true&card_width=420" /></td>
-<td><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HariDev-eng&layout=compact&theme=tokyonight&hide_border=true&card_width=320" /></td>
+<td><img src="https://github-readme-stats.vercel.app/api?username=HariDev-eng&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&count_private=true&card_width=420&cache_seconds=86400" /></td>
+<td><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HariDev-eng&layout=compact&theme=tokyonight&hide_border=true&card_width=320&cache_seconds=86400" /></td>
 </tr>
 </table>
 
@@ -227,11 +250,14 @@ Backend Development → Microservices → Event-Driven Systems
 <summary><b>Cards showing broken?</b> — click for the fix</summary>
 <br>
 
-The shared `github-readme-stats.vercel.app` instance hits its free-tier GitHub API rate limit constantly — this happens to a lot of profiles, not just yours. Fixes, in order of effort:
+The shared `github-readme-stats.vercel.app` instance is community-run and shares its GitHub API quota with every profile using it — so it fails often, and that's expected to keep happening rather than resolve itself. In fact the original project has stopped active development and now points users to its actively maintained successor, **GitHub Stats Extended**. `cache_seconds=86400` (added above) tells it to serve a cached image for 24 hours once it does succeed once, which cuts down on repeat failures — but it's a mitigation, not a fix.
 
-1. **Wait it out** — the shared instance often recovers within 10–30 minutes.
-2. **Cache-bust** — append `&cache_seconds=1800` to each URL to force a fresh render.
-3. **Self-host (permanent fix)** — fork [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats), deploy to your own free Vercel project, generate a GitHub PAT (classic, no expiry, `repo` + `read:user` scopes), set it as `PAT_1` in your Vercel env vars, then swap the domain in every URL above for your own deployment. ~10 minutes, and you stop sharing quota with the entire internet.
+The durable fix is to stop calling a live API on every page view entirely:
+
+1. **GitHub Actions workflow (recommended)** — Use a workflow that runs on a schedule, generates the stats card as a static SVG, and commits it straight into your profile repo. Since the image is then just a file in your repo (not a live API call), it can't be rate-limited by traffic to your README. Search "github readme stats action" for ready-made workflows that do this.
+2. **Self-host on Vercel** — Fork [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats), deploy to your own free Vercel project, generate a GitHub PAT (classic, no expiry, `repo` + `read:user` scopes), set it as `PAT_1` in your Vercel env vars, then swap the domain in every URL above for your own deployment. You get your own quota, separate from everyone else's.
+
+Option 1 is the more permanent fix since it removes the live-call dependency altogether; option 2 still depends on live calls, just with your own rate limit instead of the shared one.
 
 </details>
 
