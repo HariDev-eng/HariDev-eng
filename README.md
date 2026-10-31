@@ -1,8 +1,9 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=26&duration=3000&pause=1200&color=2E9EF7&center=true&vCenter=true&width=650&lines=Hi%2C+I'm+Hari+Pradap+%F0%9F%91%8B;Backend+Engineer;Distributed+Systems+Builder;Go+%7C+Spring+Boot+%7C+Kafka+%7C+RabbitMQ" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=26&duration=3000&pause=1200&color=2E9EF7&center=true&vCenter=true&width=650&lines=Hi%2C+I'm+Hari+Pradap+%F0%9F%91%8B;Backend+Engineer;Distributed+Systems+Builder;Go+%7C+Spring+Boot+%7C+Kafka+%7C+Redis" alt="Typing SVG" />
 
 [![GitHub](https://img.shields.io/badge/GitHub-HariDev--eng-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/HariDev-eng)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Hari%20Pradap-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hari-pradap-490663260/)
 ![Focus](https://img.shields.io/badge/Focus-Distributed%20Systems-2E9EF7?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Open%20to%20Backend%20Roles-brightgreen?style=for-the-badge)
 
@@ -12,22 +13,62 @@
 
 ## 🚀 About Me
 
-I'm a backend developer passionate about building scalable systems and understanding **why** software is designed the way it is.
+I'm a backend engineer who builds distributed systems and cares about **why** software is designed the way it is, not just whether it works.
 
-I graduated with a **B.Tech in Information Technology** and completed a **10-month internship at Marmin Technologies**, where I worked on REST APIs, financial document workflows, webhook delivery systems, RabbitMQ, a SaaS compliance platform, PostgreSQL, and Go backend services.
+I hold a **B.Tech in Information Technology** and completed a **10-month internship at Marmin Technologies**, where I worked on REST APIs, financial document workflows, webhook delivery systems, RabbitMQ, a SaaS compliance platform, PostgreSQL, and Go backend services.
 
-Today I'm focused on learning backend engineering by building **real distributed systems** instead of isolated tutorials. My goal isn't just to write code — it's to understand architecture, scalability, and the engineering trade-offs behind production software.
+I learn by building real systems, breaking them on purpose, and documenting what I find: failure tests, trade-offs, and design decisions.
 
-> *Learn by Building • Improve by Refactoring • Understand by Documenting*
+> *Learn by Building • Improve by Breaking • Understand by Documenting*
 
 <br>
 
-## 🏥 Flagship Project — Distributed Patient Management Platform
+## ⚡ Flagship Project: OpsPilot
 
-A healthcare platform built from scratch using **microservices** and **event-driven architecture** — my primary vehicle for learning backend engineering properly.
+**An incident detection and response platform.** OpsPilot turns raw production events into incidents, so engineers see one meaningful alert instead of hundreds of noisy ones.
+
+```
+HTTP → Event API → PostgreSQL (events + outbox) → Outbox Publisher → Kafka
+     → Incident Consumer → Redis sliding-window detection → Incident (PostgreSQL)
+     → Redis state projection → (next) Context Builder → RAG → LLM analysis → Human approval
+```
+
+### What's built
+
+| Capability | Details | Status |
+|---|---|:---:|
+| 📥 Event ingestion | Idempotent ingestion with a database-enforced unique event ID | ✅ |
+| 📤 Transactional Outbox | Event and outbox row written in one PostgreSQL transaction | ✅ |
+| 🔁 Outbox Publisher | Publishes to Kafka, using `FOR UPDATE SKIP LOCKED` to coordinate multiple publishers | ✅ |
+| 📨 Kafka consumers | Consumer groups, offset management, partition keys by service | ✅ |
+| 🧱 Idempotent processing | `processed_events` table prevents duplicate incidents on redelivery | ✅ |
+| 🪟 Sliding-window detection | Redis Sorted Set + atomic Lua script (e.g. 5 failures in 10 seconds) | ✅ |
+| 🗄️ Incident lifecycle | PostgreSQL as source of truth, Redis as a fast-read projection | ✅ |
+| ♻️ Retries + DLQ | Retry with backoff, then Dead Letter Queue on permanent failure | ✅ |
+| 🧠 Context builder + RAG | Retrieve relevant runbooks and past incidents | 🚧 |
+| 🤖 LLM incident analysis | Structured, evidence-backed root-cause analysis | 🚧 |
+| ✅ Human-in-the-loop approval | AI recommends, humans approve before any action | 📅 Planned |
+| 🐳 Docker / Kubernetes | Containerized deployment | 📅 Planned |
+
+### Engineering decisions I documented
+
+- **Event ≠ Incident.** One failed payment is an event; a burst of failures is an incident.
+- **Transactional Outbox + idempotent consumers.** The outbox prevents lost events, but delivery is at-least-once, so consumers must tolerate duplicates.
+- **PostgreSQL is the source of truth.** Redis is a projection, so an incident can still be acknowledged when Redis is down.
+- **Failure-tested on purpose.** I stopped Redis, Kafka, and consumers to see what actually breaks, and fixed what I found (including a missing DLQ topic).
+
+**Stack:** `Go` `PostgreSQL` `pgx` `Kafka` `Redis` `Lua` `Docker`
+
+🔗 [OpsPilot Repo](https://github.com/HariDev-eng/OpsPilot)
+
+<br>
+
+## 🏥 Distributed Patient Management Platform
+
+A healthcare platform built from scratch with **microservices** and **event-driven architecture**.
 
 <div align="center">
-<img src="docs/architecture.png" width="900" alt="Architecture diagram — layered view of API Gateway, core services, Kafka/RabbitMQ messaging, and data persistence" />
+<img src="docs/architecture.png" width="900" alt="Architecture diagram: API Gateway, core services, Kafka/RabbitMQ messaging, and data persistence" />
 </div>
 
 ### Services & Status
@@ -50,18 +91,31 @@ A healthcare platform built from scratch using **microservices** and **event-dri
 
 <table>
 <tr><td width="25%"><b>REST</b></td><td>Client ↔ Gateway, and general external service access.</td></tr>
-<tr><td><b>gRPC</b></td><td>High-performance sync calls between services — e.g. Appointment → Patient Verification, Appointment → Doctor Availability.</td></tr>
-<tr><td><b>Kafka</b></td><td>Async domain events — e.g. <code>Appointment Created → Kafka → Notification Service</code>.</td></tr>
-<tr><td><b>RabbitMQ</b></td><td>Background worker queues — Notification → RabbitMQ → Email / SMS / In-App workers.</td></tr>
+<tr><td><b>gRPC</b></td><td>Synchronous service-to-service calls, e.g. Appointment → Patient Verification, Appointment → Doctor Availability.</td></tr>
+<tr><td><b>Kafka</b></td><td>Async domain events, e.g. <code>Appointment Created → Kafka → Notification Service</code>.</td></tr>
+<tr><td><b>RabbitMQ</b></td><td>Background worker queues, e.g. Notification → RabbitMQ → Email / SMS / In-App workers.</td></tr>
 </table>
-
-### Concepts Implemented
-
-`Microservices` `Event-Driven Architecture` `CQRS` `Event-Carried State Transfer` `API Gateway` `JWT Authentication` `Protocol Buffers` `Repository Pattern` `Builder Pattern` `Factory Pattern` `Clean Architecture`
 
 **Stack:** `Spring Boot` `Go` `React` `PostgreSQL` `Kafka` `RabbitMQ` `gRPC` `Protocol Buffers` `Docker` `JWT`
 
 🔗 [Backend Repo](https://github.com/HariDev-eng/Patient-Management-System) · [Frontend Repo](https://github.com/HariDev-eng/patient-management-ui)
+
+<br>
+
+## 🎫 Ticket Management System
+
+<!-- TODO: Replace the bracketed text below with your real project details, then delete this comment. -->
+
+[One-line description of what the system does and who it's for.]
+
+- [Key feature 1, e.g. ticket lifecycle: create, assign, update, close]
+- [Key feature 2, e.g. role-based access or authentication]
+- [Key feature 3, e.g. notifications, search, or concurrency handling]
+- [Key engineering detail, e.g. database design or a problem you solved]
+
+**Stack:** `[your stack]`
+
+🔗 [Repo](https://github.com/HariDev-eng/[repo-name])
 
 <br>
 
@@ -76,8 +130,6 @@ Preventing double-booking under heavy concurrency. Implements and benchmarks thr
 - ✅ In-Memory
 - ✅ Mutex Protected (`sync.RWMutex`)
 - ✅ Redis Atomic `SET NX`
-
-Interface-driven storage, goroutines, and concurrent load testing.
 
 `Go` `Redis` `Goroutines` `REST APIs` `Clean Architecture`
 [Repo →](https://github.com/HariDev-eng/concurrent-movie-booking)
@@ -112,7 +164,7 @@ A secure REST backend with role-based access control.
 <td width="50%" valign="top">
 
 ### 📚 Backend Architecture Handbook
-Living documentation of every major architectural decision made across these projects — the "why," not just the "what."
+Living documentation of the architectural decisions across these projects: the "why," not just the "what."
 
 `Documentation` `ADRs`
 
@@ -134,6 +186,7 @@ Living documentation of every major architectural decision made across these pro
 - [x] gRPC
 - [x] Kafka
 - [x] RabbitMQ
+- [x] Redis
 - [ ] Authentication & Authorization
 - [ ] Docker
 - [ ] Kubernetes
@@ -147,11 +200,10 @@ Living documentation of every major architectural decision made across these pro
 
 - [x] SOLID Principles
 - [x] Clean Architecture
+- [x] Event-Driven Architecture
+- [x] CQRS
+- [x] Event-Carried State Transfer
 - [ ] Domain-Driven Design
-- [ ] CQRS
-- [ ] Event-Driven Architecture
-- [ ] Event-Carried State Transfer
-- [ ] Distributed Messaging
 - [ ] Architectural Decision Records (ADRs)
 
 </details>
@@ -162,20 +214,25 @@ Living documentation of every major architectural decision made across these pro
 
 - [x] Kafka
 - [x] RabbitMQ
-- [ ] Retry Strategies
-- [ ] Dead Letter Queues
-- [ ] Transactional Outbox
-- [ ] Idempotency
-- [ ] Eventual Consistency
+- [x] Retry Strategies
+- [x] Dead Letter Queues
+- [x] Transactional Outbox
+- [x] Idempotency
+- [ ] Eventual Consistency (deeper)
 - [ ] Distributed Transactions
 
 </details>
 
-```
-Backend Development → Microservices → Event-Driven Systems
-      → Distributed Systems → Software Architecture
-      → Cloud Native Engineering → Platform Engineering
-```
+<details>
+<summary><b>Applied AI</b></summary>
+<br>
+
+- [ ] Embeddings & Vector Search
+- [ ] RAG
+- [ ] Structured LLM Outputs
+- [ ] Human-in-the-loop AI Workflows
+
+</details>
 
 <br>
 
@@ -201,8 +258,8 @@ Backend Development → Microservices → Event-Driven Systems
 **Databases**
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
 **Frontend**
@@ -241,18 +298,6 @@ Backend Development → Microservices → Event-Driven Systems
 
 </div>
 
-<details>
-<summary><b>Why the stats/top-langs/trophy cards are gone</b></summary>
-<br>
-
-Those three specifically (the main stats card, top-langs card, and trophy) all came from the `vercel.app` family of community-hosted widgets, which share a single GitHub API quota across every profile using them — so they fail constantly and independently of anything you did. The streak stats and activity graph above use different backends and have been rendering fine, so they're kept as-is.
-
-The badges replacing them now pull from **shields.io**, which proxies and caches the GitHub API itself rather than routing through that shared instance, so they render reliably.
-
-If you want the original card *look* (rounded stat cards, top-languages breakdown, trophy icons) back instead of badges, the durable way to get it is a **GitHub Actions workflow** that runs on a schedule, renders the cards as static SVGs, and commits them into your profile repo — since the image becomes a file in your repo rather than a live API call, it can't be rate-limited by README traffic. Search "github readme stats action" for ready-made workflows that do this.
-
-</details>
-
 <br>
 
 ## 🌱 Beyond Code
@@ -264,6 +309,8 @@ If you want the original card *look* (rounded stat cards, top-languages breakdow
 ## 🎯 2026 Goals
 
 - [x] Build a distributed healthcare platform
+- [x] Build an event-driven incident platform (OpsPilot core)
+- [ ] Add RAG + LLM analysis to OpsPilot
 - [ ] Deploy every service with Docker
 - [ ] Learn Kubernetes
 - [ ] Learn AWS
@@ -276,6 +323,6 @@ If you want the original card *look* (rounded stat cards, top-languages breakdow
 
 <div align="center">
 
-*Building in public — reach out if you're working on distributed systems too.*
+*Building in public. Reach out if you're working on distributed systems too.*
 
 </div>
